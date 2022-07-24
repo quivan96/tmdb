@@ -22,7 +22,7 @@ class MovieRepositoryImpl(
     override suspend fun updateMovies(): List<Movie>? {
         val newListOfMovies = getMoviesFromApi()
         movieLocalDataSource.clearAll()
-        movieLocalDataSource.saveMoviesFromDB(newListOfMovies)
+        movieLocalDataSource.saveMoviesToDB(newListOfMovies)
         movieCacheDataSource.saveMoviesToCache(newListOfMovies)
         return newListOfMovies
     }
@@ -55,7 +55,7 @@ class MovieRepositoryImpl(
             return movieList
         } else {
             movieList = getMoviesFromApi()
-            movieLocalDataSource.saveMoviesFromDB(movieList)
+            movieLocalDataSource.saveMoviesToDB(movieList)
         }
 
         return movieList

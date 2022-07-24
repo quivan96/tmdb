@@ -12,7 +12,7 @@ class MovieLocalDataSourceImpl(private val movieDAO: MovieDAO): MovieLocalDataSo
 
     override suspend fun getMoviesFromDB(): List<Movie> = movieDAO.getMovies()
 
-    override suspend fun saveMoviesFromDB(movies: List<Movie>) {
+    override suspend fun saveMoviesToDB(movies: List<Movie>) {
         CoroutineScope(Dispatchers.IO).launch {
             movieDAO.saveMovies(movies)
         }
