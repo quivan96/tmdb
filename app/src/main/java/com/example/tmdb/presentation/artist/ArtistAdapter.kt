@@ -44,14 +44,14 @@ class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(bindi
 
     fun bind(artist: Artist) {
 
-//        val posterURL = "https://image.tmdb.org/t/p/w500" + artist.
+        val posterURL = "https://image.tmdb.org/t/p/w500" + artist.profilePath
 
         binding.titleTextView.text = artist.name
-        binding.descriptionTextView.text = artist.profilePath
+        binding.descriptionTextView.text = artist.popularity.toString()
 
-//        Glide.with(binding.imageView.context)
-//            .load(posterURL)
-//            .into(binding.imageView)
+        Glide.with(binding.imageView.context)
+            .load(posterURL)
+            .into(binding.imageView)
 
     }
 }

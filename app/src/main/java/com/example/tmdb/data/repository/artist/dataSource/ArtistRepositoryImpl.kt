@@ -36,7 +36,7 @@ class ArtistRepositoryImpl(
             val response: Response<ArtistList> = artistRemoteDataSource.getArtists()
             val body = response.body()
             if (body != null) {
-                return artistList
+                artistList = body.artists
             }
         } catch (e: Exception) {
             Log.i("mytag", e.message.toString())

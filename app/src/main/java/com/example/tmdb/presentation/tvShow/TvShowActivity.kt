@@ -42,23 +42,23 @@ class TvShowActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        binding.movieRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.tvRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter = TvShowAdapter()
-        binding.movieRecyclerView.adapter = adapter
+        binding.tvRecyclerView.adapter = adapter
         displayTvShows()
     }
 
     private fun displayTvShows() {
-        binding.movieRecyclerView.visibility = View.VISIBLE
+        binding.tvRecyclerView.visibility = View.VISIBLE
         val responseLiveData = viewModel.getTvShow()
 
         responseLiveData.observe(this, Observer {
             if(it != null) {
                 adapter.setList(it)
                 adapter.notifyDataSetChanged()
-                binding.movieProgressBar.visibility = View.GONE
+                binding.tvProgressBar.visibility = View.GONE
             } else {
-                binding.movieProgressBar.visibility = View.GONE
+                binding.tvProgressBar.visibility = View.GONE
                 Toast.makeText(applicationContext, "No data available", Toast.LENGTH_LONG).show()
 
             }

@@ -6,5 +6,5 @@ import com.google.gson.annotations.SerializedName
 data class ArtistList(
 
     @SerializedName("results")
-    val movies: List<Artist>
+    val artists: List<Artist>
 )
