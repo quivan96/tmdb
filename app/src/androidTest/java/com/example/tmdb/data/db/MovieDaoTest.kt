@@ -4,7 +4,6 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.internal.runner.junit4.AndroidAnnotatedBuilder
 import com.example.tmdb.data.model.movie.Movie
 import com.google.common.truth.Truth
 import kotlinx.coroutines.runBlocking
